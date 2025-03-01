@@ -8,30 +8,46 @@
 
 <body>	
 	<script>
+		// function secondHighest(arr) {
+		// 	//Write your code here
+		// 	let n = arr.length; 
+		// 	if(n<=1) return "-Infinity";
+			
+		// 	let maxi = arr[0];
+		// 	let secondmaxi = -1 ;
+			
+		// 	for(let i = 1 ; i<n ; i++){
+		// 		if( arr[0] != arr[1] && arr[i] != arr[i+1]){
+		// 			if(arr[i] > maxi){
+		// 				secondmaxi = maxi;
+		// 				maxi = arr[i];
+		// 			}
+		// 			else if(arr[i] > secondmaxi && arr[i] < maxi) {
+		// 				secondmaxi = arr[i];
+  //                     }
+		// 		}
+		// 		else {
+		// 			return "-Infinity";
+		// 		}
+		// 	}
+		// 	return secondmaxi;
+
 		function secondHighest(arr) {
-			//Write your code here
-			let n = arr.length; 
-			if(n<=1) return "-Infinity";
-			
-			let maxi = arr[0];
-			let secondmaxi = -1 ;
-			
-			for(let i = 1 ; i<n ; i++){
-				if( arr[0] != arr[1] && arr[i] != arr[i+1]){
-					if(arr[i] > maxi){
-						secondmaxi = maxi;
-						maxi = arr[i];
-					}
-					else if(arr[i] > secondmaxi && arr[i] < maxi) {
-						secondmaxi = arr[i];
-                      }
-				}
-				else {
-					return "-Infinity";
-				}
-			}
-			return secondmaxi;
-			
+    if (arr.length < 2) return -Infinity; // Handle arrays with 1 or no elements
+
+    let maxi = -Infinity, secondMaxi = -Infinity;
+
+    for (let num of arr) {
+        if (num > maxi) {
+            secondMaxi = maxi;
+            maxi = num;
+        } else if (num > secondMaxi && num < maxi) {
+            secondMaxi = num;
+        }
+    }
+
+    return secondMaxi === -Infinity ? "-Infinity" : secondMaxi;
+}
 
 			
 
