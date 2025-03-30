@@ -41,10 +41,10 @@
         if (num > maxi) {
             secondMaxi = maxi;
             maxi = num;
-        } else if (num > secondMaxi && num < maxi) {
+        } else if (num > secondMaxi && num != maxi) {
             secondMaxi = num;
         }
-    }
+    } 
 
     return secondMaxi === -Infinity ? maxi : secondMaxi;
 }
